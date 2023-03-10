@@ -1,0 +1,221 @@
+@import "variables";
+
+.content{
+  padding: 0 160px;
+  margin: 60px 0 0;
+  @media screen and (max-width: 1919px) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  @media screen and (max-width: 767px) {
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 30px;
+  }
+}
+.tabs {
+  display: flex;
+  align-items: center;
+  padding: 0 120px;
+  @media  screen and (max-width: 1439px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media  screen and (max-width: 1023px){
+    flex-direction: column;
+  }
+  &__wrap {
+    padding: 0 60px 0 0;
+    border-right: 4px solid rgba(255, 255, 255, 0.3);
+    @media  screen and (max-width: 1023px){
+      padding: 0 0 60px;
+      border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+      width: 100%;
+      border-right: none;
+      overflow: auto;
+    }
+    @media  screen and (max-width: 767px){
+      padding: 0 0 30px;
+    }
+  }
+  &__set {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @media  screen and (max-width: 1023px){
+      flex-direction: row;
+    }
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+  &__item{
+      flex-shrink: 0;
+  }
+
+  &__btn {
+    display: block;
+    text-decoration: none;
+    color: $text-color;
+    width: 375px;
+    text-align: right;
+    transition: all 0.3s ease;
+    @media  screen and (max-width: 1023px){
+      text-align: left;
+      width: auto;
+
+    }
+    &.active{
+      background: $gradient-text-color;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+    }
+    &:hover{
+      color: $accent-color;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 0 0 60px;
+    @media  screen and (max-width: 1023px){
+      padding: 60px 0 0;
+    }
+    @media  screen and (max-width: 767px){
+      padding: 30px 0 0;
+    }
+  }
+  &__content {
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+  &__title {
+    font-family: 'Montserrat-bold',sans-serif;
+    font-size: 30px;
+    line-height: 37px;
+    color: $white;
+    margin: 0 0 30px;
+    @media  screen and (max-width: 767px){
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 19px;
+    line-height: 30px;
+    color: $white;
+    margin: 0;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+.subject{
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Montserrat-bold',sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $active-regular-color;
+  margin: 0 0 10px;
+  transition: all 0.3s ease-in;
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 5px;
+    right: -7px;
+    border: solid $active-regular-color;
+    border-width: 2px 2px 0 0;
+    transition: all 0.3s ease-in;
+    transform: rotate(45deg);
+  }
+  &:hover{
+    color: $accent-color;
+  }
+  &:hover::after{
+    border-color: $accent-color;
+  }
+}
+.services-subject{
+  margin: 0 0 10px;
+}
+.services-heading {
+  background: $gradient-text-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 60px;
+  @media screen and (max-width: 767px){
+    margin-bottom: 30px;
+  }
+}
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  @media screen and (max-width: 767px){
+    flex-flow: column nowrap;
+    gap: 30px;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.333% - 40px);
+    @media screen and (max-width: 1023px){
+      width: calc(50% - 30px);
+    }
+    @media screen and (max-width: 767px){
+      width: 100%;
+    }
+  }
+  &__img {
+    background-color: $white;
+    border-radius: 24px;
+    width: 92px;
+    height: 92px;
+    padding: 14px;
+    margin: 0 0 30px;
+    box-sizing: border-box;
+  }
+  &__title {
+    font-size: 22px;
+    line-height: 27px;
+    font-family: 'Montserrat-bold',sans-serif;
+    color: $active-regular-color;
+    margin: 0 0 15px;
+  }
+
+  &__text {
+    font-family: 'Montserrat-regular',sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    color: $white;
+    margin: 0;
+  }
+}
+
